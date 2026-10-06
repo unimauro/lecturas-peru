@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>El libro en el Perú: lectores, mercado y brechas</title>
+<meta name="description" content="Tablero con datos verificables sobre lectura, mercado editorial y políticas del libro en el Perú, con implicancias por actor.">
+<link rel="canonical" href="https://unimauro.github.io/libro-peru/">
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#1E2A4A">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="El libro en el Perú">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="El libro en el Perú: lectores, mercado y brechas">
+<meta property="og:description" content="En el Perú se lee todos los días; lo que se lee poco son libros. Tablero con datos verificables y fuente por cifra.">
+<meta property="og:url" content="https://unimauro.github.io/libro-peru/">
+<meta property="og:image" content="https://unimauro.github.io/libro-peru/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="El libro en el Perú — lectura por tipo de publicación">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="El libro en el Perú: lectores, mercado y brechas">
+<meta name="twitter:description" content="En el Perú se lee todos los días; lo que se lee poco son libros. Datos verificables con fuente por cifra.">
+<meta name="twitter:image" content="https://unimauro.github.io/libro-peru/og.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,800&family=Archivo:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<a class="saltar" href="#contenido">Ir al contenido</a>
+<header class="barra">
+  <div class="barra-in">
+    <a class="marca" href="index.html">El libro en el Perú</a>
+    <nav aria-label="Secciones">
+      <a href="#lectores">Lectores</a>
+      <a href="#no-lectura">Por qué no se lee</a>
+      <a href="#mercado">Mercado</a>
+      <a href="#escuela">Escuela</a>
+      <a href="#pantallas">Pantallas</a>
+      <a href="#regiones">Regiones</a>
+      <a href="#vacios">Vacíos de datos</a>
+      <a href="recomendaciones.html" class="destacado">Recomendaciones</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+<section class="hero">
+  <div class="hero-texto">
+    <h1>En el Perú se lee todos los días. Lo que se lee poco son libros.</h1>
+    <p class="bajada">De cada 100 peruanos alfabetos de 18 a 64 años, 83 leyeron contenidos digitales el mes anterior y 47 leyeron al menos un libro en el año. El promedio es de 1,9 libros por persona.</p>
+    <div class="selector" role="radiogroup" aria-label="Ámbito">
+      <button role="radio" aria-checked="true" data-ambito="1">Nacional</button>
+      <button role="radio" aria-checked="false" data-ambito="2">Urbano</button>
+      <button role="radio" aria-checked="false" data-ambito="3">Rural</button>
+    </div>
+    <p class="fuente">Fuente: <a href="#f-ENL22">ENL 2022, INEI y Mincul</a>. Margen de error de 3 a 5 puntos.</p>
+  </div>
+  <div class="estante" id="estante" aria-label="Porcentaje que lee cada tipo de publicación"></div>
+</section>
+
+<section class="actores" aria-label="Implicancias por actor">
+  <p>Mostrar implicancias para</p>
+  <div class="selector chips" role="radiogroup" id="filtro-actor">
+    <button role="radio" aria-checked="true" data-actor="todos">Todos</button>
+    <button role="radio" aria-checked="false" data-actor="estado">Estado</button>
+    <button role="radio" aria-checked="false" data-actor="editoriales">Editoriales e imprentas</button>
+    <button role="radio" aria-checked="false" data-actor="libreros">Librerías y vendedores</button>
+    <button role="radio" aria-checked="false" data-actor="autores">Escritores</button>
+    <button role="radio" aria-checked="false" data-actor="mediadores">Colegios y mediadores</button>
+  </div>
+</section>
+
+<section id="lectores" class="bloque">
+  <h2>Quién lee libros</h2>
+  <p class="lead">La lectura de libros depende de dónde vives, tu edad y tu nivel educativo. La brecha urbano-rural es de 20,5 puntos.</p>
+  <div class="grid2">
+    <figure><div class="lienzo" style="height:300px"><canvas id="g-perfil" role="img" aria-label="Porcentaje que leyó libros por perfil"></canvas></div>
+      <figcaption>Población alfabeta 18-64 que leyó libros en 12 meses (%). <a href="#f-ENL22">ENL 2022</a>.</figcaption></figure>
+    <figure><div class="lienzo" style="height:300px"><canvas id="g-tipolector" role="img" aria-label="Tipo de lector de libros"></canvas></div>
+      <figcaption>Tipo de lector según frecuencia (%). 54,2 % no lee libros o lo hace una vez al año. <a href="#f-ENL22">ENL 2022</a>.</figcaption></figure>
+  </div>
+  <div class="grid3 cifras">
+    <div><b>4,0</b><span>libros al año entre quienes leen (urbano 4,1; rural 2,5)</span></div>
+    <div><b>63 %</b><span>de los libros leídos fueron impresos; 37 % digitales</span></div>
+    <div><b>36,3 %</b><span>leyó principalmente literatura; 31,1 % textos escolares o universitarios</span></div>
+  </div>
+  <aside class="impl" data-actor="editoriales">Editoriales e imprentas: el impreso sigue siendo dos de cada tres libros leídos, pero un tercio ya es digital. El público joven (18-29) es el que más lee: 58,9 %.</aside>
+  <aside class="impl" data-actor="estado">Estado: la brecha rural (29,8 % frente a 50,3 %) y la de nivel educativo (75 % con educación universitaria) son las más amplias. Son la prioridad de focalización de la PNLLB.</aside>
+  <aside class="impl" data-actor="autores">Escritores: el 68,5 % elige un libro por su tema y el 23,3 % por recomendación de un conocido. El tema y el boca a boca pesan más que la marca editorial.</aside>
+</section>
+
+<section id="no-lectura" class="bloque">
+  <h2>Por qué no se lee</h2>
+  <p class="lead">La razón principal declarada es la falta de tiempo, no el precio. El dinero aparece en 8,6 % de los casos.</p>
+  <div class="grid2">
+    <figure><div class="lienzo" style="height:320px"><canvas id="g-razones" role="img" aria-label="Razones de no lectura"></canvas></div>
+      <figcaption>Razones de no lectura general, respuesta múltiple (%). Para libros, falta de tiempo sube a 68,3 %. <a href="#f-ENL22">ENL 2022</a>.</figcaption></figure>
+    <figure><div class="lienzo" style="height:320px"><canvas id="g-acceso" role="img" aria-label="Acceso a bibliotecas y ferias"></canvas></div>
+      <figcaption>Acceso a bibliotecas y ferias, población 18-64 (%). <a href="#f-ENL22">ENL 2022</a>.</figcaption></figure>
+  </div>
+  <aside class="impl" data-actor="estado">Estado: 41,6 % no va a ferias porque no las conoce y 38,7 % no va a bibliotecas porque no hay una cerca. Ambas son barreras de oferta y difusión, atendibles con política pública.</aside>
+  <aside class="impl" data-actor="libreros">Librerías y vendedores: "falta de tiempo" sugiere formatos cortos, audiolibros y puntos de venta en rutas cotidianas (transporte, centros comerciales). Esto es una hipótesis a validar, no un hallazgo de la encuesta.</aside>
+</section>
+
+<section id="mercado" class="bloque">
+  <h2>Mercado y oferta editorial</h2>
+  <p class="lead">En 2024 se asignaron 8.893 ISBN en el Perú, 9 % más que en 2019. Los ejemplares declarados siguen 27 % por debajo de 2019.</p>
+  <div class="grid2">
+    <figure><div class="lienzo" style="height:300px"><canvas id="g-isbn" role="img" aria-label="ISBN asignados por formato"></canvas></div>
+      <figcaption>ISBN asignados por formato, 2019-2024. Digital: 19,5 % en 2024. <a href="#f-CERLALC26">Cerlalc 2026</a>.</figcaption></figure>
+    <figure><div class="lienzo" style="height:300px"><canvas id="g-agentes" role="img" aria-label="ISBN por tipo de agente editor"></canvas></div>
+      <figcaption>ISBN por tipo de agente (comerciales, autores-editores, universitarias). La autoedición creció 33 % entre 2019 y 2024. <a href="#f-CERLALC26">Cerlalc 2026</a>.</figcaption></figure>
+    <figure><div class="lienzo" style="height:280px"><canvas id="g-ejemplares" role="img" aria-label="Ejemplares declarados"></canvas></div>
+      <figcaption>Ejemplares declarados (millones). 2019 incluye grandes tirajes educativos. <a href="#f-CERLALC26">Cerlalc 2026</a>.</figcaption></figure>
+    <figure><div class="lienzo" style="height:280px"><canvas id="g-por10k" role="img" aria-label="ISBN por 10 mil habitantes"></canvas></div>
+      <figcaption>ISBN por cada 10.000 habitantes, 2024. <a href="#f-CERLALC26">Cerlalc 2026</a>.</figcaption></figure>
+  </div>
+  <div class="grid2">
+    <figure><div class="lienzo" style="height:220px"><canvas id="g-canales" role="img" aria-label="Canal de compra"></canvas></div>
+      <figcaption>Canal de compra entre quienes compraron libros (%). <a href="#f-ENL22">ENL 2022</a>.</figcaption></figure>
+    <figure><div class="lienzo" style="height:220px"><canvas id="g-gasto" role="img" aria-label="Gasto anual en libros"></canvas></div>
+      <figcaption>Gasto promedio anual en libros (S/). <a href="#f-ENL22">ENL 2022</a>.</figcaption></figure>
+  </div>
+  <h3>Indicadores de mercado declarados</h3>
+  <p class="nota">Las cifras de tamaño de mercado provienen de declaraciones gremiales a la prensa. No son estadística auditada ni comparables entre años.</p>
+  <div class="tabla-scroll"><table id="t-mercado"><thead><tr><th>Concepto</th><th>Valor</th><th>Fuente</th></tr></thead><tbody></tbody></table></div>
+  <h3>Mapa de competidores y sustitutos</h3>
+  <div class="tabla-scroll"><table id="t-competidores"><thead><tr><th>Segmento</th><th>Actores y evidencia</th><th>Fuente</th></tr></thead><tbody></tbody></table></div>
+  <aside class="impl" data-actor="editoriales">Imprentas: con capacidad instalada cerca del 50 % (dato declarado 2024), hay espacio para servicios de impresión bajo demanda y tiradas cortas para autores-editores, el segmento que más crece.</aside>
+  <aside class="impl" data-actor="libreros">Librerías: 27,8 % de compradores adquirió en ambulantes o puntos de fotocopias. Ese es el competidor directo en precio, más que otra librería.</aside>
+  <aside class="impl" data-actor="autores">Escritores: la autoedición ya es 14,3 % de los ISBN. La BNP permite tramitar el ISBN en línea desde julio de 2026, lo que baja la barrera fuera de Lima.</aside>
+</section>
+
+<section id="escuela" class="bloque">
+  <h2>Escuela, plan lector y aprendizajes</h2>
+  <p class="lead">Casi 8 de cada 10 menores leen o les leen libros, pero solo un tercio de escolares alcanza el nivel satisfactorio en lectura.</p>
+  <div class="grid2">
+    <figure><div class="lienzo" style="height:320px"><canvas id="g-escuela" role="img" aria-label="Prácticas lectoras escolares"></canvas></div>
+      <figcaption>Prácticas lectoras de menores (%). * Entre quienes no usaron la biblioteca escolar. <a href="#f-ENL22">ENL 2022</a>.</figcaption></figure>
+    <figure><div class="lienzo" style="height:320px"><canvas id="g-enla" role="img" aria-label="Nivel satisfactorio en lectura ENLA"></canvas></div>
+      <figcaption>Nivel satisfactorio en Lectura, ENLA (%). Fuentes en cada barra; ver <a href="#fuentes">lista</a>.</figcaption></figure>
+  </div>
+  <div class="veredicto">
+    <h3>¿Ayudaron los planes lectores con lecturas livianas?</h3>
+    <p>No hay evidencia nacional para afirmarlo ni para negarlo. No se encontró una evaluación de impacto del Plan Lector del Minedu. Los estudios peruanos ubicados son tesis locales con diseños débiles, como un pre-test y post-test sin grupo de control con 20 niños o encuestas descriptivas. Sus resultados positivos no permiten atribuir causalidad.</p>
+    <p>Lo que sí muestran los datos es que la condición básica falla: entre los escolares que no usaron la biblioteca escolar, 59,4 % dijo que su colegio no tiene una y 20,7 % que no funciona. Un plan lector sin libros disponibles tiene un techo bajo, sea liviano o no.</p>
+    <p class="fuente">Fuentes: <a href="#f-PL1">UCV 2014</a>, <a href="#f-PL2">UNJFSC 2024</a>, <a href="#f-ENL22">ENL 2022</a>.</p>
+  </div>
+  <aside class="impl" data-actor="mediadores">Colegios y mediadores: antes de discutir qué tan liviano debe ser el texto, asegurar biblioteca de aula funcionando y tiempo protegido de lectura. Solo 14,8 % de 6-17 años participa en clubes de lectura.</aside>
+  <aside class="impl" data-actor="estado">Estado: incorporar al Plan Lector un diseño evaluable (línea de base, grupo de comparación, uso de la ENLA) para saber si funciona.</aside>
+</section>
+
+<section id="pantallas" class="bloque">
+  <h2>La competencia de las pantallas</h2>
+  <p class="lead">La competencia real es por tiempo y atención. El 62,4 % lee WhatsApp varias veces al día, mientras el 68,3 % de quienes no leen libros dice no tener tiempo.</p>
+  <div class="grid2">
+    <figure><div class="lienzo" style="height:280px"><canvas id="g-digital" role="img" aria-label="Lectura de contenidos digitales"></canvas></div>
+      <figcaption>Lectura de contenidos digitales, población 18-64 (%). <a href="#f-ENL22">ENL 2022</a>.</figcaption></figure>
+    <div class="cifras col">
+      <div><b>28,3 M</b><span>identidades en redes sociales en Perú (81,6 % de la población), octubre 2025. <a href="#f-DR26">DataReportal 2026</a>.</span></div>
+      <div><b>23,3 %</b><span>elige qué libro leer por recomendación de un amigo o familiar. <a href="#f-ENL22">ENL 2022</a>.</span></div>
+    </div>
+  </div>
+  <aside class="impl" data-actor="libreros">Vendedores: las redes no son solo competencia; también son el canal de recomendación. La FIL Lima 2026 registró fuerte presencia de público joven según el balance de El Peruano.</aside>
+  <aside class="impl" data-actor="autores">Escritores: la presencia en comunidades digitales de lectores es parte del trabajo de difusión, especialmente para autores autoeditados sin distribuidor.</aside>
+</section>
+
+<section id="regiones" class="bloque">
+  <h2>Brechas entre regiones</h2>
+  <p class="lead">Fuera de Lima, cuatro regiones (Arequipa, Junín, Puno y La Libertad) concentraron el 51 % de la producción editorial registrada en 2019.</p>
+  <div class="grid2">
+    <figure><div class="lienzo" style="height:460px"><canvas id="g-regprod" role="img" aria-label="Producción editorial por departamento sin Lima"></canvas></div>
+      <figcaption>Títulos registrados por departamento, sin Lima, 2019. <a href="#f-BNP19">BNP</a>. Dato antiguo: usar como referencia estructural.</figcaption></figure>
+    <div>
+      <figure><div class="lienzo" style="height:200px"><canvas id="g-natural" role="img" aria-label="Lectura general por región natural"></canvas></div>
+        <figcaption>Lectura general por región natural (%). <a href="#f-ENL22">ENL 2022</a>.</figcaption></figure>
+      <p class="nota">Lectura por departamento: existe en los 24 informes departamentales de la ENL 2022 en perulee.pe. No se incorporó en esta versión.</p>
+      <p class="nota">ENLA 2024, 4.º de primaria: Loreto obtuvo 12,8 % en nivel satisfactorio, el más bajo del país. Moquegua, Tacna y Arequipa lideran en 2025.</p>
+    </div>
+  </div>
+  <aside class="impl" data-actor="estado">Gobiernos regionales: la Amazonía combina los peores resultados de aprendizaje con baja producción editorial local. Es candidata a programas de dotación de libros y mediación.</aside>
+  <aside class="impl" data-actor="editoriales">Editoriales: Arequipa, Junín, Puno y La Libertad tienen ecosistemas editoriales activos. Son nodos para ferias regionales y coediciones.</aside>
+</section>
+
+<section id="vacios" class="bloque">
+  <h2>Vacíos de datos</h2>
+  <p class="lead">Lo que no se pudo verificar se deja vacío. No se estimó.</p>
+  <ul id="l-vacios" class="vacios"></ul>
+</section>
+
+<section id="fuentes" class="bloque">
+  <h2>Fuentes</h2>
+  <p class="nota">Datos reutilizables en <a href="data/datos.json">datos.json</a>, <a href="data/isbn_peru_2019_2024.csv">ISBN 2019-2024 (CSV)</a> y <a href="data/fuentes.csv">fuentes (CSV)</a>. Consultadas el 6 de octubre de 2026.</p>
+  <ol id="l-fuentes" class="fuentes"></ol>
+</section>
+</main>
+
+<footer class="pie">
+  <p>Estudio independiente. Datos públicos con fuente por cifra. <a href="recomendaciones.html">Ver recomendaciones</a> o <a href="descargas/Estudio_Mercado_Libro_Peru_2026.docx">descargar el documento en Word</a>.</p>
+  <p class="apoyo">¿Te sirve este trabajo? Puedes apoyarlo con <strong>Yape/Plin 940 584 307</strong> o por <a href="https://paypal.me/unimauro" rel="noopener">PayPal</a>.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="data/data.js"></script>
+<script src="app.js"></script>
+<script src="chat-config.js"></script>
+<script src="chat.js"></script>
+</body>
+</html>

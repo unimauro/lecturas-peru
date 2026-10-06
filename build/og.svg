@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1E2A4A"/>
+      <stop offset="1" stop-color="#141826"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- estante de lomos (derecha), alturas = % de lectura por tipo -->
+  <g transform="translate(760,95)">
+    <rect x="0"   y="40"  width="56" height="330" rx="4" fill="#5BA9A2"/>
+    <rect x="72"  y="118" width="56" height="252" rx="4" fill="#D9A851"/>
+    <rect x="144" y="183" width="56" height="187" rx="4" fill="#D27487"/>
+    <rect x="216" y="283" width="56" height="87"  rx="4" fill="#A3A9B8"/>
+    <rect x="-16" y="370" width="304" height="10" rx="5" fill="#F5F6F3"/>
+  </g>
+
+  <!-- texto -->
+  <text x="80" y="150" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#D9A851" font-weight="bold">EL LIBRO EN EL PERÚ</text>
+  <text x="80" y="250" font-family="Georgia, 'Times New Roman', serif" font-size="72" fill="#F5F6F3" font-weight="bold">En el Perú se lee</text>
+  <text x="80" y="330" font-family="Georgia, 'Times New Roman', serif" font-size="72" fill="#F5F6F3" font-weight="bold">todos los días.</text>
+  <text x="80" y="420" font-family="Georgia, 'Times New Roman', serif" font-size="44" fill="#D9A851" font-weight="bold">Lo que se lee poco</text>
+  <text x="80" y="474" font-family="Georgia, 'Times New Roman', serif" font-size="44" fill="#D9A851" font-weight="bold">son libros.</text>
+
+  <text x="80" y="588" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#A3A9B8">Lectores · mercado · brechas regionales — fuente por cifra</text>
+</svg>
