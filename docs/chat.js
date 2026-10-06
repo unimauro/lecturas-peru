@@ -19,6 +19,7 @@
   panel.setAttribute('aria-label','Asistente del estudio El libro en el Perú');
 
   var cab = el('div','chat-cab');
+  cab.appendChild(el('span','pt'));
   cab.appendChild(el('strong',null, CFG.nombre || 'Asistente'));
   var cerrar = el('button','chat-x','×'); cerrar.type='button'; cerrar.setAttribute('aria-label','Cerrar');
   cab.appendChild(cerrar);
@@ -57,9 +58,10 @@
     burbuja('bot','Hola 👋 Soy el asistente del estudio «El libro en el Perú». Pregúntame por las cifras de lectura, el mercado editorial o las brechas regionales. No invento datos: cada cifra viene de las fuentes del tablero.');
   }
 
-  function abrir(){ panel.hidden=false; boton.setAttribute('aria-expanded','true'); saludar(); setTimeout(function(){input.focus();},50); }
-  function cerrarPanel(){ panel.hidden=true; boton.setAttribute('aria-expanded','false'); boton.focus(); }
-  boton.addEventListener('click',function(){ panel.hidden ? abrir() : cerrarPanel(); });
+  function abrir(){ panel.hidden=false; boton.hidden=true; boton.setAttribute('aria-expanded','true'); saludar(); setTimeout(function(){input.focus();},60); }
+  function cerrarPanel(){ panel.hidden=true; boton.hidden=false; boton.setAttribute('aria-expanded','false'); boton.focus(); }
+  boton.setAttribute('aria-expanded','false');
+  boton.addEventListener('click', abrir);
   cerrar.addEventListener('click', cerrarPanel);
   document.addEventListener('keydown',function(e){ if(e.key==='Escape' && !panel.hidden) cerrarPanel(); });
 

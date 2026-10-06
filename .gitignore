@@ -2,3 +2,7 @@ node_modules/
 qa/
 .DS_Store
 *.log
+.secrets/
+*.key
+*.secret
+chat-config.local.js
