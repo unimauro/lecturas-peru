@@ -93,8 +93,20 @@
     barH('g-digital', D.digital.items, D.digital.items.map(x=>x[0].includes('varias')?O:V), {max:100});
     barH('g-regprod', D.regiones_produccion.items, D.regiones_produccion.items.map((x,i)=>i<4?O:G), {suf:' títulos', dec:0});
     barH('g-natural', D.regiones_lectura.items, [T,G,V], {max:100});
+    // PISA: línea Perú vs promedio OCDE
+    if(D.pisa && document.getElementById('g-pisa')){
+      const P=D.pisa, yrs=P.anios, ocde=yrs.map(a=>P.ocde_lectura[String(a)] ?? null);
+      charts.push(new Chart(document.getElementById('g-pisa'),{type:'line',
+        data:{labels:yrs,datasets:[
+          {label:'Perú (Lectura)',data:P.lectura_peru,borderColor:O,backgroundColor:O,tension:.3,borderWidth:3,pointRadius:4},
+          {label:'Promedio OCDE',data:ocde,borderColor:G,backgroundColor:G,borderDash:[6,4],spanGaps:true,pointRadius:4}]},
+        options:{responsive:true,maintainAspectRatio:false,
+          plugins:{legend:{position:'bottom'},tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${Math.round(c.raw)} pts`}}},
+          scales:{y:{suggestedMin:300,suggestedMax:500,title:{display:true,text:'Puntaje PISA'}},x:{grid:{display:false}}}}}));
+    }
   }
   render();
+  window.__repintarGraficos = render;
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',render);
 
   /* ---------- Tablas y listas ---------- */

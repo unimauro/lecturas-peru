@@ -34,6 +34,8 @@ FUENTES = {
  "PL2": {"titulo": "El plan lector lúdico como estrategia (IE 20367, Huaycho) – diseño descriptivo no experimental", "entidad": "UNJFSC", "anio": 2024, "tipo": "Tesis", "url": "https://repositorio.unjfsc.edu.pe/handle/20.500.14067/10186"},
  "PL3": {"titulo": "Disposiciones para la organización e implementación del Plan Lector (material UGEL 07)", "entidad": "UGEL 07 / Minedu", "anio": 2024, "tipo": "Oficial", "url": "https://www.ugel07.gob.pe/wp-content/uploads/2024/04/ANEXO-4.pdf"},
  "CHAK26": {"titulo": "Entre páginas y pantallas: tendencias y factores del hábito lector peruano (análisis microdatos ENL)", "entidad": "Revista Chakiñan", "anio": 2026, "tipo": "Académico", "url": "https://chakinan.unach.edu.ec/index.php/chakinan/article/view/1457"},
+ "PISA26": {"titulo": "Resultados PISA Perú, serie 2000–2025 (puntaje medio en Lectura, Matemática y Ciencias)", "entidad": "UMC – Ministerio de Educación / OCDE", "anio": 2026, "tipo": "Oficial", "url": "http://umc.minedu.gob.pe/resultadospisa/"},
+ "OCDE25": {"titulo": "PISA 2025 Results (Volume I): promedios OCDE de Lectura (476 en 2022; 461 en 2025)", "entidad": "OCDE", "anio": 2026, "tipo": "Organismo internacional", "url": "https://www.oecd.org/en/about/programmes/pisa.html"},
 }
 
 # ---------- Indicadores (valor, unidad, fuente, nota) ----------
@@ -111,6 +113,12 @@ D["regiones_produccion"] = {"fuente":"BNP19","anio":2019,"nota":"Títulos regist
 D["regiones_lectura"] = {"fuente":"ENL22","anio":2022,"nota":"Lectura general (cualquier publicación) por región natural.",
  "items":[["Costa",93.6],["Sierra",90.5],["Selva",89.4]]}
 
+# PISA: puntaje medio en Lectura (estudiantes de 15 años). Muestra nacional, no regional.
+D["pisa"] = {"fuente":"PISA26","fuente_ocde":"OCDE25","anios":[2000,2009,2012,2015,2018,2022,2025],
+ "lectura_peru":[327.1,369.7,384.2,397.5,400.5,408.2,390.1],
+ "ocde_lectura":{"2022":476,"2025":461},
+ "nota":"Puntaje medio en Lectura, estudiantes de 15 años (escala PISA). PISA es una muestra nacional, no representativa por región ni distrito. 2000 corresponde a PISA+ (solo Lectura comparable). Promedio OCDE de referencia: 476 (2022) y 461 (2025)."}
+
 D["mercado"] = {"items":[
  {"concepto":"Tamaño de mercado estimado 2017 (ventas + importaciones, base Sunat)","valor":"≈ S/ 890 millones","fuente":"AND18"},
  {"concepto":"Tamaño de mercado estimado 2019","valor":"≈ S/ 700 millones","fuente":"AND19"},
@@ -185,6 +193,11 @@ def write():
       "autor_crec_19_24_pct": round((i["autor_editor"][-1]/i["autor_editor"][0]-1)*100,1),
       "brecha_urb_rur_libros_pp": round(perfil["Urbano"]-perfil["Rural"],1),
       "regiones_top4_share_pct": round(sum(x[1] for x in D["regiones_produccion"]["items"][:4])/reg_total*100,1),
+      # PISA lectura (cálculo propio sobre la serie de la fuente)
+      "pisa_gan_lectura_00_22_pts": round(D["pisa"]["lectura_peru"][5]-D["pisa"]["lectura_peru"][0],1),
+      "pisa_var_lectura_22_25_pts": round(D["pisa"]["lectura_peru"][6]-D["pisa"]["lectura_peru"][5],1),
+      "pisa_brecha_ocde_2022_pts": round(D["pisa"]["ocde_lectura"]["2022"]-D["pisa"]["lectura_peru"][5],1),
+      "pisa_brecha_ocde_2025_pts": round(D["pisa"]["ocde_lectura"]["2025"]-D["pisa"]["lectura_peru"][6],1),
     }
     with open(f"{OUT}/calculos.json","w",encoding="utf-8") as f: json.dump(calc,f,ensure_ascii=False,indent=1)
     print(json.dumps(calc,ensure_ascii=False,indent=1))

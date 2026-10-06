@@ -195,6 +195,20 @@
    "anio": 2026,
    "tipo": "Académico",
    "url": "https://chakinan.unach.edu.ec/index.php/chakinan/article/view/1457"
+  },
+  "PISA26": {
+   "titulo": "Resultados PISA Perú, serie 2000–2025 (puntaje medio en Lectura, Matemática y Ciencias)",
+   "entidad": "UMC – Ministerio de Educación / OCDE",
+   "anio": 2026,
+   "tipo": "Oficial",
+   "url": "http://umc.minedu.gob.pe/resultadospisa/"
+  },
+  "OCDE25": {
+   "titulo": "PISA 2025 Results (Volume I): promedios OCDE de Lectura (476 en 2022; 461 en 2025)",
+   "entidad": "OCDE",
+   "anio": 2026,
+   "tipo": "Organismo internacional",
+   "url": "https://www.oecd.org/en/about/programmes/pisa.html"
   }
  },
  "datos": {
@@ -819,6 +833,33 @@
      89.4
     ]
    ]
+  },
+  "pisa": {
+   "fuente": "PISA26",
+   "fuente_ocde": "OCDE25",
+   "anios": [
+    2000,
+    2009,
+    2012,
+    2015,
+    2018,
+    2022,
+    2025
+   ],
+   "lectura_peru": [
+    327.1,
+    369.7,
+    384.2,
+    397.5,
+    400.5,
+    408.2,
+    390.1
+   ],
+   "ocde_lectura": {
+    "2022": 476,
+    "2025": 461
+   },
+   "nota": "Puntaje medio en Lectura, estudiantes de 15 años (escala PISA). PISA es una muestra nacional, no representativa por región ni distrito. 2000 corresponde a PISA+ (solo Lectura comparable). Promedio OCDE de referencia: 476 (2022) y 461 (2025)."
   },
   "mercado": {
    "items": [

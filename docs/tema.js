@@ -17,5 +17,6 @@
     raiz.setAttribute('data-theme', nuevo);
     try{ localStorage.setItem('tema', nuevo); }catch(e){}
     pintar(btn);
+    if(typeof window.__repintarGraficos==='function'){ try{ window.__repintarGraficos(); }catch(e){} }
   });
 })();

@@ -226,3 +226,15 @@ tbody tr:nth-child(even) td{background:color-mix(in srgb, var(--enfasis) 45%, tr
 @media (max-width:480px){
   .chat-panel{right:8px;left:8px;bottom:8px;width:auto;height:min(80vh,620px)}
 }
+
+/* ---------- Apoyo ---------- */
+.apoyo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:.5rem;max-width:760px}
+.apoyo-card{display:flex;flex-direction:column;gap:.15rem;text-decoration:none;color:var(--texto);
+  background:var(--superficie);border:1px solid var(--linea);border-radius:var(--radio);
+  padding:1.15rem 1.2rem;box-shadow:var(--sombra);transition:border-color .15s,transform .15s}
+a.apoyo-card:hover{border-color:var(--ocre);transform:translateY(-2px)}
+.apoyo-card .ap-ico{font-size:1.6rem;line-height:1}
+.apoyo-card strong{font-family:var(--sans);font-size:1.02rem;color:var(--tinta);margin-top:.35rem}
+.apoyo-card .ap-sub{font-family:var(--sans);font-size:.85rem;color:var(--suave)}
+@media (max-width:680px){ .apoyo-grid{grid-template-columns:1fr} }
+@media (prefers-reduced-motion:reduce){ a.apoyo-card:hover{transform:none} }

@@ -45,9 +45,11 @@
       <a href="#no-lectura">Por qué no se lee</a>
       <a href="#mercado">Mercado</a>
       <a href="#escuela">Escuela</a>
+      <a href="#pisa">PISA</a>
       <a href="#pantallas">Pantallas</a>
       <a href="#regiones">Regiones</a>
       <a href="#vacios">Vacíos de datos</a>
+      <a href="#apoyo">Apoyo</a>
       <a href="recomendaciones.html" class="destacado">Recomendaciones</a>
       <button id="tema" class="tema" type="button" aria-label="Cambiar tema">☾</button>
     </nav>
@@ -161,6 +163,28 @@
   <aside class="impl" data-actor="estado">Estado: incorporar al Plan Lector un diseño evaluable (línea de base, grupo de comparación, uso de la ENLA) para saber si funciona.</aside>
 </section>
 
+<section id="pisa" class="bloque">
+  <h2>PISA: la lectura de los adolescentes</h2>
+  <p class="lead">La prueba PISA de la OCDE mide la comprensión lectora de los jóvenes de 15 años. Perú mejoró durante dos décadas, pero en 2025 retrocedió por primera vez y sigue muy por debajo del promedio de la OCDE.</p>
+  <div class="grid2">
+    <figure><div class="lienzo" style="height:340px"><canvas id="g-pisa" role="img" aria-label="Puntaje PISA de lectura de Perú y promedio OCDE, 2000-2025"></canvas></div>
+      <figcaption>Puntaje medio en Lectura (escala PISA). Perú 2000-2025 y promedio OCDE (2022 y 2025). <a href="#f-PISA26">UMC-Minedu / OCDE</a>.</figcaption></figure>
+    <div class="cifras col">
+      <div><b>408 vs 476</b><span>Perú frente al promedio OCDE en Lectura (2022): una brecha de 68 puntos, cerca de dos años de escolaridad. <a href="#f-PISA26">PISA</a>, <a href="#f-OCDE25">OCDE</a>.</span></div>
+      <div><b>−18 pts</b><span>cayó la Lectura de Perú entre 2022 y 2025 (408 → 390), el primer retroceso tras dos décadas de mejora. <a href="#f-PISA26">PISA 2025</a>. Cálculo propio.</span></div>
+      <div><b>+81 pts</b><span>había ganado Perú en Lectura entre 2000 y 2022, la mayor mejora de la región; aun así, nunca alcanzó el promedio OCDE. Cálculo propio.</span></div>
+    </div>
+  </div>
+  <div class="veredicto">
+    <h3>¿Se correlacionan los hábitos de lectura y PISA?</h3>
+    <p>No se puede calcular una correlación estadística dentro del Perú: PISA es una muestra nacional de 15 años (no es representativa por región ni distrito) y la ENL es una medición nacional. Lo que sí hay es <strong>evidencia convergente</strong>: tres mediciones independientes describen la misma debilidad lectora. PISA (408 puntos en 2022; 390 en 2025, bajo el promedio OCDE), la ENLA (solo 32,8 % de 4.º de primaria en nivel satisfactorio) y los hábitos de la ENL (47,3 % leyó al menos un libro; 1,9 libros al año) apuntan en la misma dirección.</p>
+    <p>Además, la propia OCDE documenta que la cantidad de libros en el hogar y el gusto por leer están entre los predictores más fuertes del desempeño en Lectura. La ENL 2022 muestra que el 4,8 % de los hogares peruanos no tiene ningún libro y el 42,7 % tiene entre 1 y 10. La relación es coherente y plausible, pero es una <strong>hipótesis de contexto, no una correlación medida</strong>: para probarla haría falta cruzar microdatos de lectura y aprendizaje a nivel de estudiante o de territorio.</p>
+    <p class="fuente">Fuentes: <a href="#f-PISA26">PISA (UMC-Minedu / OCDE)</a>, <a href="#f-OCDE25">promedios OCDE</a>, <a href="#f-ENLA24">ENLA 2024</a>, <a href="#f-ENL22">ENL 2022</a>.</p>
+  </div>
+  <aside class="impl" data-actor="estado">Estado: el retroceso 2022→2025 es nacional y PISA no permite atribuir causa. La ENLA, que es censal, es la herramienta para monitorear el aprendizaje territorio por territorio.</aside>
+  <aside class="impl" data-actor="mediadores">Colegios y mediadores: la evidencia internacional sobre libros en el hogar sugiere que dotar de libros y acompañar la lectura temprana puede pesar más que rediseñar las pruebas.</aside>
+</section>
+
 <section id="pantallas" class="bloque">
   <h2>La competencia de las pantallas</h2>
   <p class="lead">La competencia real es por tiempo y atención. El 62,4 % lee WhatsApp varias veces al día, mientras el 68,3 % de quienes no leen libros dice no tener tiempo.</p>
@@ -199,6 +223,17 @@
   <ul id="l-vacios" class="vacios"></ul>
 </section>
 
+<section id="apoyo" class="bloque">
+  <h2>Apoya este observatorio</h2>
+  <p class="lead">Proyecto abierto y sin fines de lucro. Tu apoyo cubre el hosting, los datos y el tiempo de mantenerlo vivo y actualizado.</p>
+  <div class="apoyo-grid">
+    <a class="apoyo-card" href="https://buymeacoffee.com/unimauro" rel="noopener"><span class="ap-ico" aria-hidden="true">☕</span><strong>Invítame un café</strong><span class="ap-sub">buymeacoffee.com/unimauro</span></a>
+    <a class="apoyo-card" href="https://www.paypal.com/paypalme/unimauro" rel="noopener"><span class="ap-ico" aria-hidden="true">🌐</span><strong>PayPal</strong><span class="ap-sub">paypal.me/unimauro</span></a>
+    <div class="apoyo-card"><span class="ap-ico" aria-hidden="true">📱</span><strong>Yape / Plin</strong><span class="ap-sub">940 584 307</span></div>
+  </div>
+  <p class="nota">Carlos Cárdenas Fernández — dirección, tecnología y datos.</p>
+</section>
+
 <section id="fuentes" class="bloque">
   <h2>Fuentes</h2>
   <p class="nota">Datos reutilizables en <a href="data/datos.json">datos.json</a>, <a href="data/isbn_peru_2019_2024.csv">ISBN 2019-2024 (CSV)</a> y <a href="data/fuentes.csv">fuentes (CSV)</a>. Consultadas el 6 de octubre de 2026.</p>
@@ -208,7 +243,7 @@
 
 <footer class="pie">
   <p>Estudio independiente. Datos públicos con fuente por cifra. <a href="recomendaciones.html">Ver recomendaciones</a> o <a href="descargas/Estudio_Mercado_Libro_Peru_2026.docx">descargar el documento en Word</a>.</p>
-  <p class="apoyo">¿Te sirve este trabajo? Puedes apoyarlo con <strong>Yape/Plin 940 584 307</strong> o por <a href="https://paypal.me/unimauro" rel="noopener">PayPal</a>.</p>
+  <p class="apoyo">¿Te sirve este trabajo? <a href="#apoyo">Apóyalo</a> con un café, Yape/Plin 940 584 307 o PayPal.</p>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>

@@ -25,7 +25,9 @@ window.CHAT_CONFIG = {
     "principal razón para no leer libros: falta de tiempo (68,3 %).",
     "Producción: 8.893 ISBN en 2024 (+9,0 % vs 2019); ejemplares 14,7 millones (−27,1 % vs 2019).",
     "Escuela: solo 32,8 % de 4.º de primaria en nivel satisfactorio de lectura (ENLA 2024).",
-    "Canal informal: 27,8 % de compradores adquirió en ambulantes/fotocopias."
+    "Canal informal: 27,8 % de compradores adquirió en ambulantes/fotocopias.",
+    "PISA (lectura, 15 años): Perú 408 puntos en 2022 y 390 en 2025 (primer retroceso), frente al promedio OCDE de 476 (2022) y 461 (2025); desde 2000 ganó 81 puntos.",
+    "No hay correlación estadística medida entre hábitos de lectura y PISA (PISA es muestra nacional, no regional); es evidencia convergente, no un coeficiente."
   ].join(" "),
   sugerencias: [
     "¿Cuántos peruanos leen libros?",
