@@ -94,7 +94,7 @@
     fetch(CFG.endpoint, {
       method:'POST',
       headers:{'Content-Type':'application/json','X-Client-Token':CFG.token},
-      body: JSON.stringify({ messages: mensajes, system: CFG.system, context: CFG.contexto })
+      body: JSON.stringify({ project: CFG.proyecto, messages: mensajes, system: CFG.system, context: CFG.contexto })
     })
     .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json().catch(function(){return r.text();}); })
     .then(function(data){

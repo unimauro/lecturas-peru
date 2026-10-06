@@ -4,7 +4,8 @@
    >>> Pega aquí el token de cliente (formato libro_… o el que uses en el servidor). <<< */
 window.CHAT_CONFIG = {
   endpoint: "https://ai.tunky.net/v1/chat",
-  token: "",                       // <-- TOKEN DEL GATEWAY (vacío = modo offline con aviso)
+  token: "libro_0fe60acc05b3a929cd90b89b98c51aad",  // gateway ai.tunky.net, proyecto libro-peru (gateado por Origin)
+  proyecto: "libro-peru",
   nombre: "Asistente del estudio",
   // Guardarraíles: el gateway recibe esto como contexto de sistema.
   system: [
