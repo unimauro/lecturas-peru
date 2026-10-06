@@ -1,4 +1,4 @@
-/* Configuración del asistente del estudio "El libro en el Perú".
+/* Configuración del asistente del estudio "Lecturas en el Perú".
    El sitio es estático y público: este token viaja al cliente. El gateway
    ai.tunky.net valida además por allowlist de Origin (unimauro.github.io).
    >>> Pega aquí el token de cliente (formato libro_… o el que uses en el servidor). <<< */
@@ -9,7 +9,7 @@ window.CHAT_CONFIG = {
   nombre: "Asistente del estudio",
   // Guardarraíles: el gateway recibe esto como contexto de sistema.
   system: [
-    "Eres el asistente del observatorio independiente «El libro en el Perú».",
+    "Eres el asistente del observatorio independiente «Lecturas en el Perú».",
     "Respondes en español del Perú, en tono claro y breve.",
     "Tu único tema son los datos del estudio: hábitos de lectura, mercado editorial,",
     "producción (ISBN), escuela/ENLA, brechas regionales y marco normativo del libro en el Perú.",

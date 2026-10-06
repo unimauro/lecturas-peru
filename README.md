@@ -1,6 +1,6 @@
-# El libro y la lectura en el Perú
+# Lecturas en el Perú
 
-**🌐 Sitio: https://unimauro.github.io/libro-peru/**
+**🌐 Sitio: https://unimauro.github.io/lecturas-peru/**
 
 Diagnóstico del mercado del libro y de los hábitos de lectura en el Perú. Incluye un dashboard web, recomendaciones de política pública y estrategias de innovación por actor. Cada cifra tiene fuente; lo que no se pudo verificar se declara como vacío.
 
@@ -31,14 +31,14 @@ Diagnóstico del mercado del libro y de los hábitos de lectura en el Perú. Inc
    ```bash
    git init
    git add .
-   git commit -m "Estudio mercado del libro Perú v1.0"
+   git commit -m "Lecturas en el Perú v1.1"
    git branch -M main
-   git remote add origin https://github.com/TU_USUARIO/libro-peru.git
+   git remote add origin https://github.com/TU_USUARIO/lecturas-peru.git
    git push -u origin main
    ```
 
 3. En GitHub, ve a **Settings → Pages**. En *Build and deployment* elige **Deploy from a branch**, rama `main` y carpeta `/docs`. Guarda.
-4. En uno o dos minutos el sitio queda en `https://TU_USUARIO.github.io/libro-peru/`.
+4. En uno o dos minutos el sitio queda en `https://TU_USUARIO.github.io/lecturas-peru/`.
 
 La interfaz de GitHub puede cambiar. Si los nombres de menú no coinciden, consulta la documentación oficial de GitHub Pages.
 

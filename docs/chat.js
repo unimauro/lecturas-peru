@@ -16,7 +16,7 @@
 
   var panel = el('div','chat-panel'); panel.hidden = true;
   panel.setAttribute('role','dialog');
-  panel.setAttribute('aria-label','Asistente del estudio El libro en el Perú');
+  panel.setAttribute('aria-label','Asistente del estudio Lecturas en el Perú');
 
   var cab = el('div','chat-cab');
   cab.appendChild(el('span','pt'));
@@ -55,7 +55,7 @@
   var saludado = false;
   function saludar(){
     if(saludado) return; saludado = true;
-    burbuja('bot','Hola 👋 Soy el asistente del estudio «El libro en el Perú». Pregúntame por las cifras de lectura, el mercado editorial o las brechas regionales. No invento datos: cada cifra viene de las fuentes del tablero.');
+    burbuja('bot','Hola 👋 Soy el asistente del estudio «Lecturas en el Perú». Pregúntame por las cifras de lectura, el mercado editorial o las brechas regionales. No invento datos: cada cifra viene de las fuentes del tablero.');
   }
 
   function abrir(){ panel.hidden=false; boton.hidden=true; boton.setAttribute('aria-expanded','true'); saludar(); setTimeout(function(){input.focus();},60); }
